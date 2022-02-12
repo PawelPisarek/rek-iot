@@ -1,0 +1,14 @@
+:host {
+  display: block;
+  width: 20px;
+  height: 20px;
+  &.error {
+    background-color: red;
+  }
+  &.warning {
+    background-color: yellow;
+  }
+  &.ok {
+    background-color: #0073ff;
+  }
+}

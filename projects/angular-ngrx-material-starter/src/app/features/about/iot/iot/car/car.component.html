@@ -1,0 +1,34 @@
+<mat-expansion-panel (opened)="panelOpenState = true"
+                     (closed)="panelOpenState = false">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      biletomat 2
+    </mat-panel-title>
+    <mat-panel-description>
+      <anms-car-alert></anms-car-alert>
+    </mat-panel-description>
+
+  </mat-expansion-panel-header>
+  <div class="container">
+    <div class="row">
+      <div class="col-1">
+        <anms-car-alert></anms-car-alert>
+      </div>
+      <div class="col-11">drukarka <span class="warning"> <span class="warning--info">ostrzeżenie</span>: niski stan papieru</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col-11">
+        terminal
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col-11">
+        czytnik kodów QR
+      </div>
+    </div>
+  </div>
+
+</mat-expansion-panel>
