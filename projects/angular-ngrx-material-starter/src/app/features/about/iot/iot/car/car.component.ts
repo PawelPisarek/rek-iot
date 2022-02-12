@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { MockDataService } from '../mock-data.service';
 
 @Component({
   selector: 'anms-car',
@@ -7,8 +8,13 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CarComponent implements OnInit {
-  panelOpenState = false;
-  constructor() {}
+  asdasd$: any[] = [];
+  aha$: any[] = [];
+
+  constructor(private mockDataService: MockDataService) {
+    this.asdasd$ = this.mockDataService.getDevices();
+    this.aha$ = this.mockDataService.mcu();
+  }
 
   ngOnInit(): void {}
 }

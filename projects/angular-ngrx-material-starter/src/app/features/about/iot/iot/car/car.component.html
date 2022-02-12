@@ -1,34 +1,62 @@
-<mat-expansion-panel (opened)="panelOpenState = true"
-                     (closed)="panelOpenState = false">
-  <mat-expansion-panel-header>
-    <mat-panel-title>
-      biletomat 2
-    </mat-panel-title>
-    <mat-panel-description>
-      <anms-car-alert></anms-car-alert>
-    </mat-panel-description>
+<div class="container g-0">
+  <div class="row g-0">
 
-  </mat-expansion-panel-header>
-  <div class="container">
-    <div class="row">
-      <div class="col-1">
-        <anms-car-alert></anms-car-alert>
-      </div>
-      <div class="col-11">drukarka <span class="warning"> <span class="warning--info">ostrzeżenie</span>: niski stan papieru</span>
-      </div>
+    <div class="col-1 d-flex justify-content-center flex-row pt-2">
+      <div>></div>
     </div>
-    <div class="row">
-      <div class="col-1"></div>
-      <div class="col-11">
-        terminal
+    <mat-expansion-panel class="col-11">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          biletomat 2
+        </mat-panel-title>
+        <mat-panel-description>
+          <anms-car-alert></anms-car-alert>
+        </mat-panel-description>
+
+      </mat-expansion-panel-header>
+      <div class="container">
+        <div class="row" *ngFor="let ticketMachine of asdasd$">
+          <div class="col-1">
+            <anms-car-alert *ngFor="let alert of ticketMachine.data"></anms-car-alert>
+          </div>
+          <div class="col-11">{{ticketMachine.title}} <span class="warning"
+                                                            *ngFor="let alert of ticketMachine.data"> <span
+            class="warning--info">ostrzeżenie</span>: niski stan papieru</span>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-1"></div>
-      <div class="col-11">
-        czytnik kodów QR
-      </div>
-    </div>
+
+    </mat-expansion-panel>
   </div>
+  <div class="row g-0">
 
-</mat-expansion-panel>
+    <div class="col-1 d-flex justify-content-center flex-row pt-2">
+      <div>></div>
+    </div>
+    <mat-expansion-panel class="col-11">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          komputer pokładowy
+        </mat-panel-title>
+        <mat-panel-description>
+          <anms-car-alert></anms-car-alert>
+        </mat-panel-description>
+
+      </mat-expansion-panel-header>
+      <div class="container">
+        <div class="row" *ngFor="let mcu of asdasd$">
+          <div class="col-1">
+            <anms-car-alert *ngFor="let alert of mcu.data"></anms-car-alert>
+          </div>
+          <div class="col-11">{{mcu.title}} <span class="warning" *ngFor="let alert of mcu.data"> <span
+            class="warning--info">ostrzeżenie</span>: niski stan papieru</span>
+          </div>
+        </div>
+      </div>
+
+    </mat-expansion-panel>
+  </div>
+</div>
+
+
+
