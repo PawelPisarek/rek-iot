@@ -6,6 +6,7 @@ export interface DeviceInfo {
 }
 
 export interface Device {
+  id: string;
   title: string;
   data: DeviceInfo[];
 }
