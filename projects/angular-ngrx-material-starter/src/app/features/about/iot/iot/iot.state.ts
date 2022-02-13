@@ -1,7 +1,7 @@
 import { ActionReducerMap, createFeatureSelector } from '@ngrx/store';
 
-import { BookState } from './crud/books.model';
-import { bookReducer } from './crud/books.reducer';
+import { DeviceState } from './crud/device.model';
+import { deviceReducer } from './crud/devices.reducer';
 import { AppState } from '../../../../core/core.state';
 
 export const FEATURE_NAME = 'iot';
@@ -9,11 +9,11 @@ export const selectExamples = createFeatureSelector<State, ExamplesState>(
   FEATURE_NAME
 );
 export const reducers: ActionReducerMap<ExamplesState> = {
-  books: bookReducer
+  books: deviceReducer
 };
 
 export interface ExamplesState {
-  books: BookState;
+  books: DeviceState;
 }
 
 export interface State extends AppState {

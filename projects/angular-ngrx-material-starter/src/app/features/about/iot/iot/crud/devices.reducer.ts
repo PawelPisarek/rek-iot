@@ -1,17 +1,19 @@
 import { createEntityAdapter, EntityAdapter } from '@ngrx/entity';
 
-import { Book, BookState } from './books.model';
-import { actionBooksDeleteOne, actionBooksUpsertOne } from './books.actions';
+import { Device, DeviceState } from './device.model';
+import { actionBooksDeleteOne, actionBooksUpsertOne } from './devices.actions';
 import { Action, createReducer, on } from '@ngrx/store';
 
-export function sortByTitle(a: Book, b: Book): number {
+export function sortByTitle(a: Device, b: Device): number {
   return a.title.localeCompare(b.title);
 }
 
-export const bookAdapter: EntityAdapter<Book> = createEntityAdapter<Book>({
-  sortComparer: sortByTitle
-});
-export const initialState: BookState = bookAdapter.getInitialState({
+export const deviceAdapter: EntityAdapter<Device> = createEntityAdapter<Device>(
+  {
+    sortComparer: sortByTitle
+  }
+);
+export const initialState: DeviceState = deviceAdapter.getInitialState({
   ids: ['123', '1', '2', '3'],
   entities: {
     '123': {
@@ -40,11 +42,13 @@ export const initialState: BookState = bookAdapter.getInitialState({
 const reducer = createReducer(
   initialState,
   on(actionBooksUpsertOne, (state, { book }) =>
-    bookAdapter.upsertOne(book, state)
+    deviceAdapter.upsertOne(book, state)
   ),
-  on(actionBooksDeleteOne, (state, { id }) => bookAdapter.removeOne(id, state))
+  on(actionBooksDeleteOne, (state, { id }) =>
+    deviceAdapter.removeOne(id, state)
+  )
 );
 
-export function bookReducer(state: BookState | undefined, action: Action) {
+export function deviceReducer(state: DeviceState | undefined, action: Action) {
   return reducer(state, action);
 }

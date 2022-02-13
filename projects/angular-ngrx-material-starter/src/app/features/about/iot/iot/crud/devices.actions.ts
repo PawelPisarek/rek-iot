@@ -1,9 +1,9 @@
 import { createAction, props } from '@ngrx/store';
-import { Book } from './books.model';
+import { Device } from './device.model';
 
 export const actionBooksUpsertOne = createAction(
   '[Books] Upsert One',
-  props<{ book: Book }>()
+  props<{ book: Device }>()
 );
 
 export const actionBooksDeleteOne = createAction(

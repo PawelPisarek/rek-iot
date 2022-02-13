@@ -2,8 +2,8 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { MockDataService } from '../mock-data.service';
 import { Observable } from 'rxjs';
 import { select, Store } from '@ngrx/store';
-import { getItemById, selectAllBooks } from '../crud/books.selectors';
-import { Book } from '../crud/books.model';
+import { getItemById, selectAllBooks } from '../crud/devices.selectors';
+import { Device } from '../crud/device.model';
 import { tap } from 'rxjs/operators';
 import { State } from '../iot.state';
 
@@ -17,7 +17,7 @@ export class CarComponent implements OnInit {
   asdasd$: any[] = [];
   aha$: any[] = [];
 
-  books$: Observable<Book | undefined> = this.store.pipe(
+  books$: Observable<Device | undefined> = this.store.pipe(
     select(getItemById('123'))
   );
 

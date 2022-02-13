@@ -3,10 +3,10 @@ import { createSelector } from '@ngrx/store';
 // import { selectRouterState } from '../../../core/core.module';
 // import { selectExamples, ExamplesState } from '../examples.state';
 
-import { bookAdapter } from './books.reducer';
+import { deviceAdapter } from './devices.reducer';
 import { ExamplesState, selectExamples } from '../iot.state';
 
-const { selectEntities, selectAll } = bookAdapter.getSelectors();
+const { selectEntities, selectAll } = deviceAdapter.getSelectors();
 
 export const selectBooks = createSelector(
   selectExamples,
