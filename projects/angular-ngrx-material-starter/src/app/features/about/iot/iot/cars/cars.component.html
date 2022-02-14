@@ -4,7 +4,7 @@
             Autobus nr 123
         </mat-panel-title>
         <mat-panel-description>
-            <anms-car-alert></anms-car-alert>
+<!--            <anms-car-alert></anms-car-alert>-->
         </mat-panel-description>
 
     </mat-expansion-panel-header>
@@ -16,7 +16,7 @@
             Autobus nr 124
         </mat-panel-title>
         <mat-panel-description>
-            <anms-car-alert></anms-car-alert>
+            <anms-car-alert [data]="((applianceAlert$ | async)?.danger)?.data?.[0]"></anms-car-alert>
         </mat-panel-description>
 
     </mat-expansion-panel-header>

@@ -1,10 +1,10 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { MockDataService } from '../mock-data.service';
-import { Observable } from 'rxjs';
+import { combineLatest, Observable } from 'rxjs';
 import { select, Store } from '@ngrx/store';
 import { getItemById } from '../crud/devices.selectors';
-import { Device } from '../crud/device.model';
-import { map } from 'rxjs/operators';
+import { Device, DeviceInfo } from '../crud/device.model';
+import { map, mergeMap } from 'rxjs/operators';
 import { State } from '../iot.state';
 import { selectAllAppliances } from '../appliance/appliances.selectors';
 

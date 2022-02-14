@@ -9,7 +9,9 @@
           {{appliance.title}}
         </mat-panel-title>
         <mat-panel-description>
-          <anms-car-alert></anms-car-alert>
+          <ng-container *ngFor="let alert of appliance.data">
+            <anms-car-alert [data]="data" *ngFor="let data of (alert | async)?.data" ></anms-car-alert>
+          </ng-container>
         </mat-panel-description>
 
       </mat-expansion-panel-header>
@@ -17,7 +19,7 @@
         <div class="row" *ngFor="let device$ of appliance.data">
           <ng-container *ngIf="device$ | async as device">
             <div class="col-1">
-              <anms-car-alert *ngFor="let alert of device.data"></anms-car-alert>
+              <anms-car-alert *ngFor="let alert of device.data" [data]="alert"></anms-car-alert>
             </div>
             <div class="col-11">
               {{device?.title}}

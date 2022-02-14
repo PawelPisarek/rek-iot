@@ -2,19 +2,24 @@ import {
   Component,
   OnInit,
   ChangeDetectionStrategy,
-  HostBinding
+  HostBinding,
+  Input,
+  OnChanges,
+  SimpleChanges
 } from '@angular/core';
+import { DeviceInfo } from '../crud/device.model';
 
 @Component({
-  selector: 'anms-car-alert',
+  selector: '[data]anms-car-alert',
   templateUrl: './car-alert.component.html',
   styleUrls: ['./car-alert.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CarAlertComponent implements OnInit {
-  @HostBinding('class') classNames = 'error';
+export class CarAlertComponent implements OnChanges {
+  @HostBinding('class') classNames = '';
+  @Input() data: DeviceInfo | undefined | null;
 
-  constructor() {}
-
-  ngOnInit(): void {}
+  ngOnChanges(changes: SimpleChanges): void {
+    this.classNames = this.data?.type || '';
+  }
 }

@@ -1,7 +1,7 @@
 import { EntityState } from '@ngrx/entity';
 
 export interface DeviceInfo {
-  type: 'danger' | 'warn';
+  type: 'danger' | 'warn' | 'ok';
   description: string;
 }
 

@@ -19,7 +19,7 @@ export const initialState: DeviceState = deviceAdapter.getInitialState({
     '123': {
       id: '123',
       title: 'drukarka termiczna',
-      data: [{ type: 'warn', description: 'niski stan papieru' }]
+      data: [{ type: 'ok', description: 'niski stan papieru' }]
     },
     '1': {
       id: '1',
